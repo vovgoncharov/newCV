@@ -4,6 +4,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link rel="preconnect" href="https://fonts.googleapis.com" /><link
@@ -88,6 +89,7 @@
                 </section>
             </aside>
             <article class="article">
+                <h2 class="article__title">About me</h2>
                 <section class="summary">
                     <h2 class="summary__title">Summary</h2>
                     <p class="summary__text"
@@ -165,7 +167,177 @@
                         >
                     </ul>
                 </section>
+                <section class="code">
+                    <h2 class="code__title">Example code</h2>
+                    <pre class="code__pre">
+                        <code class="code__example">
+                            const play = document.querySelector(".play-btn");
+                            const pause = document.querySelector(".pause-btn");
+                            const birds = document.querySelectorAll(".link");
+                            const section = document.querySelector(".section");
+                            const audio = new Audio();
+                            
+                            birds.forEach((bird) =>
+                                bird.addEventListener("click", (e) => {
+                                    let birdSong = e.currentTarget.dataset;
+                                    audio.src = `assets/audio/${birdSong.bird}.mp3`;
+                                    section.style.background = `url(assets/img/${birdSong.bird}.jpg)`;
+                                    audio.currentTime = 0;
+                                    audio.play();
+                                    getPause();
+                                }),
+                            );
+                            
+                            const playSong = () => {
+                                audio.src = "assets/audio/forest.mp3";
+                                audio.currentTime = 0;
+                                audio.play();
+                            };
+                            const pauseSong = () => {
+                                audio.pause();
+                            };
+                            
+                            const getPause = () => {
+                                document.querySelector(".wrap-button").classList.remove("squer");
+                                document.querySelectorAll(".span-btn").forEach((element) => {
+                                    element.classList.add("pause");
+                                });
+                            };
+                            
+                            const getPlay = () => {
+                                document.querySelector(".wrap-button").classList.add("squer");
+                                document.querySelectorAll(".span-btn").forEach((element) => {
+                                    element.classList.remove("pause");
+                                });
+                            };
+                            
+                            play.addEventListener("click", playSong);
+                            pause.addEventListener("click", pauseSong);
+                            
+                            play.addEventListener("click", getPause);
+                            pause.addEventListener("click", getPlay);
+                        </code>
+                    </pre>
+                </section>
+                <section class="port">
+                    <h2 class="port__title">Portfolio</h2>
+                    <ul class="port__list">
+                        <li class="port__item"
+                            ><a
+                                href="https://vovgoncharov.github.io/API-GitHub/"
+                                class="port__link"
+                                target="_blank"
+                                ><img
+                                    src="assets/img/portfolio1.png"
+                                    alt=""
+                                    class="port__img"
+                                />
+                            </a>
+                            In this project, I have built a page that uses the
+                            GitHub API to list the repositories of a GitHub
+                            user.</li
+                        >
+                        <li class="port__item"
+                            ><a
+                                href="https://vovgoncharov.github.io/portfolio/"
+                                class="port__link"
+                                target="_blank"
+                                ><img
+                                    src="assets/img/portfolio2.png"
+                                    alt=""
+                                    class="port__img" /></a
+                            >This portfolio was developed for a
+                            photographer.</li
+                        >
+                        <li class="port__item"
+                            ><a
+                                href="https://vovgoncharov.github.io/sounds/"
+                                class="port__link"
+                                target="_blank"
+                                ><img
+                                    src="assets/img/Portfolio3.png"
+                                    alt=""
+                                    class="port__img"
+                                /> </a
+                            >In this project, I have built a page that uses the
+                            audio player.</li
+                        >
+                        <li class="port__item"
+                            ><a
+                                href="https://vovgoncharov.github.io/monaco-react/"
+                                class="port__link"
+                                target="_blank"
+                                ><img
+                                    src="assets/img/Portfolio4.png"
+                                    alt=""
+                                    class="port__img" /></a
+                            >This project was developed for a beauty salon.</li
+                        >
+                        <li class="port__item"
+                            ><a
+                                href="https://vovgoncharov.github.io/conversion/"
+                                class="port__link"
+                                target="_blank"
+                                ><img
+                                    src="assets/img/Portfolio10.png"
+                                    alt=""
+                                    class="port__img"
+                                /> </a
+                            >In this project, I have built a page that uses the
+                            Currency API for currency exchange.</li
+                        >
+                        <li class="port__item"
+                            ><a
+                                href="https://vovgoncharov.github.io/gitar/"
+                                class="port__link"
+                                target="_blank"
+                                ><img
+                                    src="assets/img/Portfolio7.png"
+                                    alt="photo"
+                                    class="port__img"
+                                /> </a
+                            >In this project, I have built a page that uses the
+                            keyup event listener.</li
+                        >
+                        <li class="port__item"
+                            ><a
+                                href="https://vovgoncharov.github.io/shelters/"
+                                class="port__link"
+                                target="_blank"
+                                ><img
+                                    src="assets/img/Portfolio9.png"
+                                    alt="photo"
+                                    class="port__img"
+                                /> </a
+                            >This project was developed for animal shelter.</li
+                        >
+                    </ul>
+                </section>
             </article>
         </main>
+        <footer class="footer">
+            <div class="footer__block">
+                <nav class="footer__nav">
+                    <ul class="footer__list">
+                        <li class="footer__item">
+                            <a
+                                href="https://github.com/vovgoncharov"
+                                target="_blank"
+                                class="footer__link"
+                            ></a>
+                        </li>
+                        <li class="footer__item">
+                            <a
+                                href="https://rs.school/js/"
+                                target="_blank"
+                                class="footer__link"
+                            ></a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <p class="footer__text">2022</p>
+            </div>
+        </footer>
     </body>
 </html>
