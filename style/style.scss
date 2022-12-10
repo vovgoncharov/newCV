@@ -59,6 +59,10 @@ body {
     width: 35%;
     margin-left: 5%;
 
+    .aside__arrow {
+        display: none;
+    }
+
     .aside__title {
         color: $coffe;
         font-size: 18px;
@@ -240,7 +244,7 @@ body {
         gap: 40px;
 
         .port__item {
-            width: 30%;
+            width: 40%;
             height: 15%;
             list-style: none;
             transition: transform 0.5s;
@@ -470,3 +474,5 @@ span {
         }
     }
 }
+
+@import 'media'

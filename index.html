@@ -36,6 +36,7 @@
             <aside class="aside">
                 <section class="aside__contact">
                     <h2 class="aside__title">Contact</h2>
+                    <div class="aside__arrow"></div>
                     <ul class="aside__list">
                         <li class="aside__item phone">+380686691755</li>
                         <li class="aside__item email">deykdog@gmail.com</li>
@@ -52,6 +53,7 @@
                 </section>
                 <section class="aside__hard-skills">
                     <h2 class="aside__title">Hard Skills</h2>
+                    <div class="aside__arrow"></div>
                     <ul class="aside__list">
                         <li class="aside__item">HTML5</li>
                         <li class="aside__item">CSS (flexbox, SCSS)</li>
@@ -62,6 +64,7 @@
                 </section>
                 <section class="aside__soft-skills">
                     <h2 class="aside__title">Soft Skills</h2>
+                    <div class="aside__arrow"></div>
                     <ul class="aside__list">
                         <li class="aside__item">Teamwork</li>
                         <li class="aside__item">Time Management</li>
@@ -73,6 +76,7 @@
                 </section>
                 <section class="aside__lang">
                     <h2 class="aside__title">Language</h2>
+                    <div class="aside__arrow"></div>
                     <ul class="aside__list">
                         <li class="aside__item">English - Intermediate</li>
                         <li class="aside__item">Ukrainian - Native</li>
@@ -80,6 +84,7 @@
                 </section>
                 <section class="aside__active">
                     <h2 class="aside__title">Interests</h2>
+                    <div class="aside__arrow"></div>
                     <ul class="aside__list">
                         <li class="aside__item">Computer games</li>
                         <li class="aside__item">Chess</li>
@@ -171,51 +176,51 @@
                     <h2 class="code__title">Example code</h2>
                     <pre class="code__pre">
                         <code class="code__example">
-                            const play = document.querySelector(".play-btn");
-                            const pause = document.querySelector(".pause-btn");
-                            const birds = document.querySelectorAll(".link");
-                            const section = document.querySelector(".section");
-                            const audio = new Audio();
+const play = document.querySelector(".play-btn");
+const pause = document.querySelector(".pause-btn");
+const birds = document.querySelectorAll(".link");
+const section = document.querySelector(".section");
+const audio = new Audio();
                             
-                            birds.forEach((bird) =>
-                                bird.addEventListener("click", (e) => {
-                                    let birdSong = e.currentTarget.dataset;
-                                    audio.src = `assets/audio/${birdSong.bird}.mp3`;
-                                    section.style.background = `url(assets/img/${birdSong.bird}.jpg)`;
-                                    audio.currentTime = 0;
-                                    audio.play();
-                                    getPause();
-                                }),
-                            );
+birds.forEach((bird) =>
+    bird.addEventListener("click", (e) => {
+        let birdSong = e.currentTarget.dataset;
+        audio.src = `assets/audio/${birdSong.bird}.mp3`;
+        section.style.background = `url(assets/img/${birdSong.bird}.jpg)`;
+        audio.currentTime = 0;
+        audio.play();
+        getPause();
+    }),
+);
                             
-                            const playSong = () => {
-                                audio.src = "assets/audio/forest.mp3";
-                                audio.currentTime = 0;
-                                audio.play();
-                            };
-                            const pauseSong = () => {
-                                audio.pause();
-                            };
+const playSong = () => {
+    audio.src = "assets/audio/forest.mp3";
+    audio.currentTime = 0;
+    audio.play();
+};
+const pauseSong = () => {
+    audio.pause();
+};
                             
-                            const getPause = () => {
-                                document.querySelector(".wrap-button").classList.remove("squer");
-                                document.querySelectorAll(".span-btn").forEach((element) => {
-                                    element.classList.add("pause");
-                                });
-                            };
+const getPause = () => {
+    document.querySelector(".wrap-button").classList.remove("squer");
+    document.querySelectorAll(".span-btn").forEach((element) => {
+        element.classList.add("pause");
+    });
+};
                             
-                            const getPlay = () => {
-                                document.querySelector(".wrap-button").classList.add("squer");
-                                document.querySelectorAll(".span-btn").forEach((element) => {
-                                    element.classList.remove("pause");
-                                });
-                            };
+const getPlay = () => {
+    document.querySelector(".wrap-button").classList.add("squer");
+    document.querySelectorAll(".span-btn").forEach((element) => {
+        element.classList.remove("pause");
+    });
+};
                             
-                            play.addEventListener("click", playSong);
-                            pause.addEventListener("click", pauseSong);
+play.addEventListener("click", playSong);
+pause.addEventListener("click", pauseSong);
                             
-                            play.addEventListener("click", getPause);
-                            pause.addEventListener("click", getPlay);
+play.addEventListener("click", getPause);
+pause.addEventListener("click", getPlay);
                         </code>
                     </pre>
                 </section>
@@ -339,5 +344,6 @@
                 <p class="footer__text">2022</p>
             </div>
         </footer>
+        <script async src="js/script.js"></script>
     </body>
 </html>
